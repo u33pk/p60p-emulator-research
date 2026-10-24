@@ -1,0 +1,25 @@
+{
+  "description": "P60P ALN 6.0.0.108 librender_service.z.so; screen listener and GL branch selection",
+  "size": 5805128,
+  "source_sha256": "893a44c13b877e05fb9a883b405737b74175e6274c12e82646adee07b4a5e427",
+  "patches": [
+    {
+      "offset": "0x39a2b8",
+      "old": "52a00594",
+      "new": "ac060094",
+      "instruction": "bl RegisterScreenNodeListener"
+    },
+    {
+      "offset": "0x40f504",
+      "old": "75000035",
+      "new": "1f2003d5",
+      "instruction": "nop; always initialize EGL"
+    },
+    {
+      "offset": "0x40f518",
+      "old": "d5020035",
+      "new": "1f2003d5",
+      "instruction": "nop; select the GL branch"
+    }
+  ]
+}

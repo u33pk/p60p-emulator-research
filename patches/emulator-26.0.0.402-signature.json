@@ -1,0 +1,19 @@
+{
+  "description": "DevEco Studio Emulator 26.0.0.402 Linux aarch64; CheckImage returns success",
+  "size": 130446408,
+  "source_sha256": "62dd21c38f6e21e242f66f6c17753dfa445dd4073e072d851d4af41f8ff9ab4e",
+  "patches": [
+    {
+      "offset": "0x1224374",
+      "old": "fd7bb4a9",
+      "new": "00008052",
+      "instruction": "mov w0, #0"
+    },
+    {
+      "offset": "0x1224378",
+      "old": "fd030091",
+      "new": "c0035fd6",
+      "instruction": "ret"
+    }
+  ]
+}

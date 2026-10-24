@@ -1,0 +1,12 @@
+{
+  "jobs": [
+    {
+      "name": "bootevent.composer_host.ready",
+      "cmds": ["start render_service"]
+    },
+    {
+      "name": "bootevent.wms.fullscreen.ready",
+      "cmds": ["stop bootanimation"]
+    }
+  ]
+}

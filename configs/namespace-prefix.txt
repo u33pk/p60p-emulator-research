@@ -1,0 +1,5 @@
+In /system/etc/ld-musl-namespace-aarch64.ini, prepend this path to namespace.default.lib.paths in the [acquiescence] section:
+
+/vendor/lib64/hdf48
+
+Do not replace the remaining phone paths. The emulator HDF libraries must be discoverable without discarding the phone's chipset SDK paths.

@@ -1,0 +1,20 @@
+Merge into the active SELinux policy files, then restore labels after every debugfs write.
+
+file_contexts:
+/system/bin/QemuParams    u:object_r:emu_param_exec:s0
+/dev/express_pipe         u:object_r:dev_emu_pipe_file:s0
+
+parameter_contexts:
+ohos.qemu.hvd.name        u:object_r:ohos_emu_hvd_name:s0
+ohos.qemu.dpi             u:object_r:ohos_emu_dpi_param:s0
+
+All four QemuParams services in /vendor/etc/init.hmos.emulator.cfg use:
+"secon": "u:r:emu_param:s0"
+
+Other labels that must not be lost:
+/system/bin/hdcd          u:object_r:hdcd_exec:s0
+/vendor/bin/hdf_devmgr    u:object_r:hdf_devmgr_exec:s0
+/system/lib64/libEGL_impl.so and the three GLES impl links:
+                          u:object_r:system_lib_file:s0
+/system/etc/selinux/system_common.cil:
+                          u:object_r:system_file:s0
